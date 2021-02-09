@@ -15,7 +15,7 @@
 
         public CalculateMovieRatings()
         {
-            this.filePath = @"{path}\ratings.csv";
+            this.filePath = @"E:\Developments\Github\Evaluation-Performance-Tools\dataset\ratings.csv";
         }
 
         [Benchmark]

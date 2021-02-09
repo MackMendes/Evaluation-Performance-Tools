@@ -5,67 +5,62 @@
     using System.IO;
     using System.Text;
 
-    public class CalculateMovieRatings
+    public static class CalculateMovieRatings
     {
-        private readonly string filePath;
+        private static readonly string filePath = @"E:\Developments\Github\Evaluation-Performance-Tools\dataset\ratings-100MB.csv";
 
-        public CalculateMovieRatings()
+        public static void Version1()
         {
-            this.filePath = @"C:\Users\charles.macedo\source\repos\evaluation-performance-tools\dataset\ratings.csv";
-        }
-
-        public void Version1()
-        {
-            var lines = File.ReadAllLines(this.filePath);
+            var lines = File.ReadAllLines(filePath);
             var sum = 0d;
             var count = 0;
-
+            
             foreach (var line in lines)
             {
                 var parts = line.Split(',');
 
-                if (parts[1] == "110")
+                if (parts[1] == "223")
                 {
                     sum += double.Parse(parts[2], CultureInfo.InvariantCulture);
                     count++;
                 }
             }
 
-            Console.WriteLine($"Average rate for Braveheart is {sum / count} ({count} votes).");
+            Console.WriteLine($"The average is {sum / count}.");
         }
 
-        public void Version2()
+        public static void Version2()
         {
             var sum = 0d;
             var count = 0;
             string line;
 
-            using (var fs = File.OpenRead(this.filePath))
+            using (var fs = File.OpenRead(filePath))
             using (var reader = new StreamReader(fs))
                 while ((line = reader.ReadLine()) != null)
                 {
                     var parts = line.Split(',');
 
-                    if (parts[1] == "110")
+                    if (parts[1] == "223")
                     {
                         sum += double.Parse(parts[2], CultureInfo.InvariantCulture);
                         count++;
                     }
                 }
 
-            Console.WriteLine($"Average rate for Braveheart is {sum / count} ({count} votes).");
+            Console.WriteLine($"The average is {sum / count}.");
         }
 
-        public void Version3()
+        public static void Version3()
         {
             var sum = 0d;
             var count = 0;
             string line;
 
             // Braveheart id movie id as span;
-            var lookingFor = "110".AsSpan();
+            var lookingFor = "223".AsSpan();
 
-            using var fs = File.OpenRead(this.filePath);
+            using var fs = File.OpenRead(filePath);
             using var reader = new StreamReader(fs);
             while ((line = reader.ReadLine()) != null)
             {
@@ -86,15 +81,15 @@
                 count++;
             }
 
-            Console.WriteLine($"Average rate for Braveheart is {sum / count} ({count} votes).");
+            Console.WriteLine($"The average is {sum / count}.");
         }
 
-        public void Version4()
+        public static void Version4()
         {
             var sum = 0d;
             var count = 0;
 
-            var lookingFor = Encoding.UTF8.GetBytes("110").AsSpan();
+            var lookingFor = Encoding.UTF8.GetBytes("223").AsSpan();
             var rawBuffer = new byte[1024 * 1024];
             using (var fs = File.OpenRead(filePath))
             {
@@ -147,7 +142,7 @@
                 }
             }
 
-            Console.WriteLine($"Average rate for Braveheart is {sum / count} ({count} votes).");
+            Console.WriteLine($"The average is {sum / count}.");
         }
     }
 }

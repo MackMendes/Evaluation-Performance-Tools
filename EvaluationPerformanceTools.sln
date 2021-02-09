@@ -15,7 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.ConsoleApplication.EvaluationVisualStudioTool", "src\Presentation.ConsoleApplication.EvaluationVisualStudioTool\Presentation.ConsoleApplication.EvaluationVisualStudioTool.csproj", "{99CA957C-2AA0-40F7-927E-23ECF4C9BB07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.ConsoleApplication.EvaluationVisualStudioTool", "src\Presentation.ConsoleApplication.EvaluationVisualStudioTool\Presentation.ConsoleApplication.EvaluationVisualStudioTool.csproj", "{99CA957C-2AA0-40F7-927E-23ECF4C9BB07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.WebAPI.EvaluationVisualStudioTools", "src\Presentation.WebAPI.EvaluationVisualStudioTools\Presentation.WebAPI.EvaluationVisualStudioTools.csproj", "{1810A5D4-95AC-41F0-A671-7736E904EAD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{99CA957C-2AA0-40F7-927E-23ECF4C9BB07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99CA957C-2AA0-40F7-927E-23ECF4C9BB07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99CA957C-2AA0-40F7-927E-23ECF4C9BB07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1810A5D4-95AC-41F0-A671-7736E904EAD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1810A5D4-95AC-41F0-A671-7736E904EAD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1810A5D4-95AC-41F0-A671-7736E904EAD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1810A5D4-95AC-41F0-A671-7736E904EAD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
